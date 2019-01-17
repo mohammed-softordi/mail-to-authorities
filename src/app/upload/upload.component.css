@@ -1,0 +1,8 @@
+.button-upload {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.button-upload > a {
+  color: #fff;
+}

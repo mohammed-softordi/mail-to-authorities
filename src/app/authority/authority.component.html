@@ -1,0 +1,16 @@
+<div class="app-component-content">
+  <h2 class="app-component-title">{{title}}</h2>
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let story of authorityStories | async" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{story.from}}'s Story with {{story.to}}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{story.subject}}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p [innerHtml]="story.body"></p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

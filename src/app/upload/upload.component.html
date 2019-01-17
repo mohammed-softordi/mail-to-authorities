@@ -1,0 +1,24 @@
+
+<div class="app-component-content">
+  <h2 class="app-component-title">{{title}}</h2>
+
+  <mat-form-field>
+    <input matInput placeholder="Your name" [(ngModel)]="story.from">
+  </mat-form-field>
+
+   <mat-form-field>
+    <input matInput placeholder="The authority" [(ngModel)]="story.to">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Subjet" [(ngModel)]="story.subject">
+  </mat-form-field>
+  <mat-form-field>
+   <textarea matInput placeholder="Past the message you sent here" [(ngModel)]="story.body"></textarea>
+  </mat-form-field>
+  <div class="button-upload">
+    <a mat-raised-button routerLink="/stories" class="cui-button" (click)="addStory(story)">
+      {{'Upload conversation' | uppercase}}
+    </a>
+  </div>
+
+</div>
