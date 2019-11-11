@@ -10,7 +10,22 @@
   // Define any styles affected by the theme.
   .cui-button {
     // Use mat-color to extract individual colors a palette.
-    background-color: mat-color($primary);
+    background-color: mat-color($accent);
     border-color: mat-color($accent, A400);
-}
+  }
+  .cui-button.primary {
+    // Use mat-color to extract individual colors a palette.
+    background-color: #041e42;
+    border-color: #041e42;
+  }
+  .cui-button.info{
+    // Use mat-color to extract individual colors a palette.
+    background-color: #4a8ba4;
+    border-color: #4a8ba4;
+  }
+  .cui-button.warning{
+    // Use mat-color to extract individual colors a palette.
+    background-color: #f2855f;
+    border-color: #f2855f;
+  }
 }

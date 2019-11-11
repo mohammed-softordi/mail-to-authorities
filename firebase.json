@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/mail-to-authorities",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

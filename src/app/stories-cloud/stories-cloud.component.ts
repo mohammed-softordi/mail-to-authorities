@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import _ from 'lodash';
+import * as D3 from 'd3-cloud';
 
 import { StoryService } from '../service/story.service';
+
+declare let d3: any;
 
 @Component({
   selector: 'app-stories-cloud',

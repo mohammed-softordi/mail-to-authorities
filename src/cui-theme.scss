@@ -1,6 +1,6 @@
 // Import library functions for theme creation.
 @import '~@angular/material/theming';
-@import './cui-button-typography';
+@import './cui-typography';
 @import './cui-button';
 @import './app-global-classes';
 
@@ -8,12 +8,14 @@
 @include mat-core();
 
 // Define your application's custom theme.
-$primary: mat-palette($mat-deep-purple);
+$primary: mat-palette($mat-purple, 800);
 $accent:  mat-palette($mat-deep-purple, 900);
 $cui-theme: mat-light-theme($primary, $accent);
 
 // Include theme styles for Angular Material components.
 @include angular-material-theme($cui-theme);
+
+@include mat-core($cui-typography);
 
 // Include theme styles for your custom components.
 @include cui-button-theme($cui-theme);

@@ -18,3 +18,12 @@ body {
   text-align: center;
   margin: 40px 0;
 }
+
+.button-group {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.button-group > .mat-fab{
+  margin: 10px;
+}

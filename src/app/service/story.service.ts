@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import 'lodash';
+
+type CollectionPredicate<T> = any;
 
 @Injectable({
   providedIn: 'root'
@@ -46,11 +47,11 @@ export class StoryService {
     return this.db.collection(ref, queryFn)
       .snapshotChanges()
       .pipe(
-        map(changes =>
-          return changes.map(function(c){
+        map(changes => {
+          return changes.map(function (c) {
             return {id: c.payload.doc.id, ...c.payload.doc.data()}
-          })
-        )
+          });
+        })
       );
   }
 }
