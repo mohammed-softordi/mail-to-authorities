@@ -14,9 +14,9 @@ import { UploadComponent } from './upload/upload.component';
 import { StoriesComponent } from './stories/stories.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { StoriesCloudComponent } from './stories-cloud/stories-cloud.component';
-
 import { StoryService } from './service/story.service';
 import { AuthorityComponent } from './authority/authority.component';
+import {EmptyRouteComponent} from "./empty-route/empty-route.component";
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { AuthorityComponent } from './authority/authority.component';
     UploadComponent,
     StoriesComponent,
     StoriesCloudComponent,
-    AuthorityComponent
+    AuthorityComponent,
+    EmptyRouteComponent
   ],
   imports: [
     BrowserModule,
