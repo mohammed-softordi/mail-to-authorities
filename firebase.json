@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/mail-to-authorities",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
