@@ -13,7 +13,7 @@
         "build-single-spa": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/mail-to-authorities/single-spa",
+            "outputPath": "dist/mail-to-authorities-single-spa",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -94,11 +94,11 @@
         "serve-single-spa": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "mail-to-authorities:build/single-spa"
+            "browserTarget": "mail-to-authorities-single-spa:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mail-to-authorities:build:production/single-spa"
+              "browserTarget": "mail-to-authorities-single-spa:build:production"
             }
           }
         },
