@@ -12,6 +12,8 @@ import { StoryService } from '../service/story.service';
   styleUrls: ['./authority.component.css']
 })
 export class AuthorityComponent implements OnInit {
+  title = 'Complaints';
+
   public authorityStories: Observable<any[]>;
   constructor(
     public storyService: StoryService,

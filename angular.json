@@ -10,10 +10,10 @@
       "prefix": "app",
       "schematics": {},
       "architect": {
-        "build": {
+        "build-single-spa": {
           "builder": "@angular-builders/custom-webpack:browser",
           "options": {
-            "outputPath": "dist/mail-to-authorities",
+            "outputPath": "dist/mail-to-authorities/single-spa",
             "index": "src/index.html",
             "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.ts",
@@ -52,8 +52,58 @@
             }
           }
         },
-        "serve": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mail-to-authorities",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/cui-theme.scss",
+              "src/app-global-classes.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve-single-spa": {
           "builder": "@angular-builders/custom-webpack:dev-server",
+          "options": {
+            "browserTarget": "mail-to-authorities:build/single-spa"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mail-to-authorities:build:production/single-spa"
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "mail-to-authorities:build"
           },
